@@ -53,6 +53,7 @@ let star=[];
 let key=[];
 
 //オブジェクト達
+let teta=[];
 let teki=[];
 let tama=[];
 let jiki = new Jiki();
@@ -94,6 +95,7 @@ function updateAll()
 	updateObj(star);
 	updateObj(tama);
 	updateObj(teki);
+	updateObj(teta);
 	jiki.update();
 }
 
@@ -109,6 +111,7 @@ function drawAll()
 	drawObj( tama );
 	jiki.draw();
 	drawObj( teki );
+	drawObj( teta );
 
 	// 自機の範囲 0 ～ FIELD_W
 	// カメラの範囲 0 ～ (FIELD_W-SCREEN_W)
@@ -141,6 +144,7 @@ function putInfo()
 		con.fillText("FPS :"+fps,20,20);
 		con.fillText("Tama:"+tama.length,20,40);
 		con.fillText("Teki:"+teki.length,20,60);
+		con.fillText("Teta:"+teta.length,20,80);
 	}
 }
 
@@ -149,7 +153,7 @@ function gameLoop()
 {
 	//テスト的に敵を出す
 
-	if( 1 )//rand(0,10)==1 )
+	if( rand(0,20) ==1)//rand(0,10)==1 )
 		teki.push(new Teki(39,rand(0,FIELD_W)<<8,0, 0,rand(300,1200)));
 
 	updateAll();
