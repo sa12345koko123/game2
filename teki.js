@@ -14,6 +14,8 @@ class Teki extends CharaBase
 	{
 		super( snum,x,y,vx,vy );
 		this.flag = false;
+		this.w=20;
+		this.h=20;
 
 	}
 
@@ -42,7 +44,7 @@ class Teki extends CharaBase
 		// ベクトルを求める
 		dx = Math.cos( an )*1000;
 		dy = Math.sin( an )*1000;
-		
+
 		an += rand(-10, 10)*Math.PI/180
 
 		teta.push(new Teta( 15, this.x, this.y, dx, dy ));

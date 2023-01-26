@@ -108,3 +108,28 @@ function rand(min,max)
 {
 	return Math.floor( Math.random()*(max-min+1) )+min;
 }
+
+// 当たり判定
+function checkHit(x1,y1,h1, x2,y2,w2,h2){
+	
+	// 円同士の当たり判定
+	let a = (x2-x1)>>8;
+	let b = (y2-y1)>>8;
+	let r = r1+r2;
+	
+	return r*r >= a*a + b*b ;
+	let left1= x1>>8;
+	let right1  = left1+w1;
+	let top1    = y1>>8;
+	let bottom1 = top1 +h1;
+	
+	let left2   = x2>>8;
+	let right2  = left2+w2;
+	let top2    = y2>>8;
+	let bottom2 = top2 +h2;
+	
+	return( left1 <= right2  &&
+		   right1 >= left2   &&
+			 top1 <= bottom2 &&
+		  bottom1 >= top2      );
+}
